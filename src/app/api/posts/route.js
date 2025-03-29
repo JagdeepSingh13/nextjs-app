@@ -8,6 +8,7 @@ export const GET = async (request) => {
 
   try {
     await connect();
+    // fetch posts of the user or all users
     const posts = await Post.find(username && { username });
 
     return new NextResponse(JSON.stringify(posts), { status: 200 });
